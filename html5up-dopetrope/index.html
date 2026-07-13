@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP | html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Adapté pour Actes De Vie
+	-- SLIDER AUTOMATIQUE AVEC TRANSITIONS FLUIDES (images défilent une par une) --
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Actes De Vie - Services d'accompagnement, actualités et ressources pour faciliter vos démarches du quotidien" />
+		<meta name="keywords" content="Actes De Vie, services, accompagnement, actualités, contact" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* personnalisations supplémentaires pour Actes De Vie */
+			#logo h1 a, #nav a, #banner h2, .major h2 {
+				transition: all 0.2s ease;
+			}
+			#nav .current a {
+				background: #e44c65;
+				color: #fff !important;
+			}
+			#nav a:hover {
+				background: #f56a6a;
+				color: #fff !important;
+			}
+			.featured-icon {
+				color: #e44c65;
+			}
+			.contact-info i {
+				margin-right: 0.5rem;
+				color: #e44c65;
+			}
+			#footer .social a:hover {
+				background: #e44c65;
+				border-color: #e44c65;
+			}
+			.button.alt:hover {
+				background: #e44c65;
+				border-color: #e44c65;
+				color: #fff;
+			}
+			
+			/* ========= STYLES SLIDER BANNER (images défilent une par une) ========= */
+			#banner {
+				width: 100%;
+				background-color: #1e2a1c;
+				overflow: hidden;
+				position: relative;
+				box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+				margin: 0;
+				padding: 0;
+			}
+			.slider {
+				position: relative;
+				width: 100%;
+				height: auto;
+				min-height: 280px;
+				aspect-ratio: 16 / 7;
+				background-color: #2a3a26;
+			}
+			.slide {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: 0;
+				transition: opacity 1.2s ease-in-out;
+				visibility: hidden;
+			}
+			.slide.active {
+				opacity: 1;
+				visibility: visible;
+				z-index: 2;
+			}
+			/* indicateurs de progression (dots) pour l'UX */
+			.slider-controls {
+				position: absolute;
+				bottom: 18px;
+				left: 0;
+				right: 0;
+				display: flex;
+				justify-content: center;
+				gap: 12px;
+				z-index: 30;
+			}
+			.dot {
+				width: 10px;
+				height: 10px;
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 50%;
+				cursor: pointer;
+				transition: all 0.2s ease;
+				backdrop-filter: blur(2px);
+			}
+			.dot.active-dot {
+				background-color: #ffefcf;
+				transform: scale(1.2);
+				box-shadow: 0 0 4px #fff8f0;
+			}
+			/* pour assurer que le contenu intro ne soit pas décalé */
+			#intro.container {
+				margin-top: 1.5rem;
+			}
+			@media (max-width: 720px) {
+				.slider {
+					aspect-ratio: 4 / 3;
+				}
+			}
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Actes De Vie</a></h1>
+						</div>
+
+					<!-- Navigation mise à jour selon les besoins Actes De Vie -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="index.html">Accueil</a></li>
+                                <li><a href="nosservices.html">Nos Services</a></li>
+								<li><a href="nousconnaitre.html">Nous connaître</a></li>
+								<li><a href="actualites.html">Actualités</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+
+					<!-- Banner avec SLIDER complet : les images défilent une par une automatiquement -->
+					<section id="banner">
+						<div class="slider">
+							<img src="images/banner1.png" class="slide active" alt="Bannière Actes De Vie 1">
+							<img src="images/banner2.png" class="slide" alt="Bannière Actes De Vie 2">
+							<img src="images/banner3.png" class="slide" alt="Bannière Actes De Vie 3">
+							<img src="images/banner4.png" class="slide" alt="Bannière Actes De Vie 4">
+							<img src="images/banner5.jpg" class="slide" alt="Bannière Actes De Vie 5">
+							<img src="images/banner6.jpg" class="slide" alt="Bannière Actes De Vie 6">
+						</div>
+						<div class="slider-controls"></div>
+					</section>
+
+					<!-- Intro : valeurs et services clés -->
+						<section id="intro" class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<section class="first">
+										<i class="icon solid featured fa-handshake"></i>
+										<header>
+											<h2>Nous Connaitre</h2>
+										</header>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="middle">
+										<i class="icon solid featured alt fa-briefcase"></i>
+										<header>
+											<h2>Nos Services</h2>
+										</header> 
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section class="last">
+										<i class="icon solid featured alt2 fa-users"></i>
+										<header>
+											<h2>Nous Contacter</h2>
+										</header>
+									</section>
+								</div>
+							</div>
+						</section>
+
+				</section>
+
+			<!-- Main : contenu actualisé pour Actes De Vie (Portfolio & Blog) -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								<section>
+    <header class="major">
+        <h2>NOS ACTIONS</h2>
+    </header>
+
+    <div class="row">
+
+        <!-- Bloc 1 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-home" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 40</h3>
+                <p>foyers aidés par la distribution alimentaire depuis sa mise en place.</p>
+            </section>
+        </div>
+
+        <!-- Bloc 2 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-users" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 200</h3>
+                <p>personnes aidées (enfants et adultes) par la distribution alimentaire.</p>
+            </section>
+        </div>
+
+        <!-- Bloc 3 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-box-open" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 150</h3>
+                <p>distributions alimentaires réalisées par an.</p>
+            </section>
+        </div>
+
+        <!-- Bloc 4 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-comments" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 75</h3>
+                <p>personnes rencontrées et conseillées par nos bénévoles spécialisés.</p>
+            </section>
+        </div>
+
+        <!-- Bloc 5 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-hand-holding-heart" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 100</h3>
+                <p>enfants bénéficiaires de notre action de Noël.</p>
+            </section>
+        </div>
+
+        <!-- Bloc 6 -->
+        <div class="col-4 col-6-medium col-12-small">
+            <section class="box" style="text-align:center;">
+                <i class="icon solid fa-school" style="font-size:40px; color:#d89b5b;"></i>
+                <h3>Plus de 60</h3>
+                <p>étudiants aidés pour les fournitures scolaires.</p>
+            </section>
+        </div>
+
+    </div>
+</section>
+
+								<!-- Blog / Actualités-->
+									<section>
+										<header class="major">
+											<h2>Actualités</h2>
+										</header>
+										<div class="row">
+
+    <!-- Carte 1 -->
+    <div class="col-4 col-12-small">
+        <section class="box">
+            <a href="#" class="image featured">
+                <img src="images/collectejouets25.png" alt="Collecte de jouets">
+            </a>
+            <header>
+                <h3>Collecte de jouets (Retour en images)</h3>
+            </header>
+        </section>
+    </div>
+
+    <!-- Carte 2 -->
+    <div class="col-4 col-12-small">
+        <section class="box">
+            <a href="#" class="image featured">
+                <img src="images/distributionfournitures25-.png" alt="Distribution fournitures">
+            </a>
+            <header>
+                <h3>Distribution de fournitures scolaires 2025</h3>
+            </header>
+        </section>
+    </div>
+
+    <!-- Carte 3 -->
+    <div class="col-4 col-12-small">
+        <section class="box">
+            <a href="#" class="image featured">
+                <img src="images/collectefournitures25.png" alt="Collecte fournitures">
+            </a>
+            <header>
+                <h3>Collecte de fournitures scolaires 2025</h3>
+            </header>
+        </section>
+    </div>
+
+</div>
+
+<!-- Bouton -->
+<div style="text-align:center; margin-top:30px;">
+    <a href="#" class="button large" style="background:#e44c65; color:white;">
+        Lire plus
+    </a>
+</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer entièrement personnalisé pour Actes De Vie -->
+				<section id="footer">
+    <div class="container">
+
+        <!-- Newsletter seule -->
+        <div class="row">
+
+    <!-- Carte -->
+    <div class="col-6 col-12-medium">
+        <section>
+            <iframe 
+                src="https://maps.google.com/maps?q=Orleans&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </section>
+    </div>
+
+    <!-- Infos -->
+    <div class="col-6 col-12-medium">
+        <section style="padding-left:20px;">
+
+            <h2 style="color:#e44c65;">Adresse</h2>
+
+            <p>
+                <strong>Siège social :</strong><br>
+                80 rue des Colverts 45160 OLIVET
+            </p>
+
+            <p>
+                <strong>Lieu d’activité :</strong><br>
+                5 rue Gustave Eiffel 45000 ORLÉANS
+            </p>
+
+            <br>
+
+            <h2 style="color:#e44c65;">Téléphone / Mail</h2>
+
+            <p>
+                <a href="tel:0749740833">07 49 74 08 33</a>
+            </p>
+
+            <p>
+                <a href="mailto:contact@actesdevie.fr">
+                    contact@actesdevie.fr
+                </a>
+            </p>
+
+        </section>
+    </div>
+
+</div>
+
+        <!-- Copyright -->
+        <div class="row">
+            <div class="col-12">
+                <div id="copyright">
+                    <ul class="links">
+                        <li>&copy; Actes De Vie. Tous droits réservés.</li>
+                        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+		</div>
+
+		<!-- Scripts identiques au template d'origine (compatibilité) -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+			<!-- SLIDER JAVASCRIPT : défilement automatique des images une par une avec gestion dots -->
+			<script>
+				(function() {
+					// initialisation complète du slider automatique
+					const slides = document.querySelectorAll('#banner .slide');
+					const controlsContainer = document.querySelector('#banner .slider-controls');
+					
+					if (!slides.length) return;
+					
+					let currentIndex = 0;
+					let intervalId = null;
+					let isTransitioning = false;
+					const AUTO_DELAY = 4500; // 4.5 secondes entre chaque image
+					
+					// fonction pour mettre à jour l'image active et les dots
+					function setActiveSlide(index, skipLock = false) {
+						if (isTransitioning && !skipLock) return;
+						
+						const total = slides.length;
+						let newIndex = index;
+						if (newIndex < 0) newIndex = total - 1;
+						if (newIndex >= total) newIndex = 0;
+						
+						if (newIndex === currentIndex && !skipLock) return;
+						
+						isTransitioning = true;
+						
+						// changer classe active sur slides
+						slides.forEach((slide, i) => {
+							slide.classList.remove('active');
+						});
+						slides[newIndex].classList.add('active');
+						
+						// mise à jour des indicateurs (dots)
+						const dots = document.querySelectorAll('#banner .dot');
+						if (dots.length) {
+							dots.forEach((dot, i) => {
+								if (i === newIndex) {
+									dot.classList.add('active-dot');
+								} else {
+									dot.classList.remove('active-dot');
+								}
+							});
+						}
+						
+						currentIndex = newIndex;
+						
+						setTimeout(() => {
+							isTransitioning = false;
+						}, 1200); // correspond à la transition CSS opacity 1.2s
+					}
+					
+					// fonction suivant
+					function nextSlide() {
+						if (isTransitioning) return;
+						let next = currentIndex + 1;
+						if (next >= slides.length) next = 0;
+						setActiveSlide(next);
+					}
+					
+					// fonction précédent (utilisée pour les dots)
+					function prevSlide() {
+						if (isTransitioning) return;
+						let prev = currentIndex - 1;
+						if (prev < 0) prev = slides.length - 1;
+						setActiveSlide(prev);
+					}
+					
+					// reset de l'autoplay (relance l'interval)
+					function resetAutoplay() {
+						if (intervalId) {
+							clearInterval(intervalId);
+						}
+						intervalId = setInterval(() => {
+							nextSlide();
+						}, AUTO_DELAY);
+					}
+					
+					// création des points (dots) interactifs
+					function createDots() {
+						if (!controlsContainer) return;
+						controlsContainer.innerHTML = '';
+						for (let i = 0; i < slides.length; i++) {
+							const dot = document.createElement('span');
+							dot.classList.add('dot');
+							if (i === currentIndex) dot.classList.add('active-dot');
+							dot.setAttribute('data-index', i);
+							dot.addEventListener('click', (e) => {
+								e.stopPropagation();
+								if (isTransitioning) return;
+								const targetIdx = parseInt(dot.getAttribute('data-index'), 10);
+								if (!isNaN(targetIdx) && targetIdx !== currentIndex) {
+									setActiveSlide(targetIdx);
+									resetAutoplay();
+								} else if (targetIdx === currentIndex) {
+									// simple réinitialisation du timer pour rafraîchir le délai
+									resetAutoplay();
+								}
+							});
+							controlsContainer.appendChild(dot);
+						}
+					}
+					
+					// initialisation complète du slider
+					function initSlider() {
+						// s'assurer qu'une seule slide active (première par défaut)
+						let hasActive = false;
+						slides.forEach(slide => {
+							if (slide.classList.contains('active')) hasActive = true;
+						});
+						if (!hasActive && slides.length > 0) {
+							slides[0].classList.add('active');
+							currentIndex = 0;
+						} else {
+							for (let i = 0; i < slides.length; i++) {
+								if (slides[i].classList.contains('active')) {
+									currentIndex = i;
+									break;
+								}
+							}
+						}
+						
+						// création des dots
+						createDots();
+						
+						// démarrage de l'autoplay
+						if (intervalId) clearInterval(intervalId);
+						intervalId = setInterval(() => {
+							nextSlide();
+						}, AUTO_DELAY);
+						
+						// gestion du survol : mettre en pause automatique pour meilleure expérience
+						const bannerSection = document.getElementById('banner');
+						if (bannerSection) {
+							bannerSection.addEventListener('mouseenter', () => {
+								if (intervalId) {
+									clearInterval(intervalId);
+									intervalId = null;
+								}
+							});
+							bannerSection.addEventListener('mouseleave', () => {
+								if (!intervalId) {
+									intervalId = setInterval(() => {
+										nextSlide();
+									}, AUTO_DELAY);
+								}
+							});
+						}
+						
+						// gestion visibilité onglet (économie d'énergie)
+						function handleVisibility() {
+							if (document.hidden) {
+								if (intervalId) {
+									clearInterval(intervalId);
+									intervalId = null;
+								}
+							} else {
+								if (!intervalId) {
+									intervalId = setInterval(() => {
+										nextSlide();
+									}, AUTO_DELAY);
+								}
+							}
+						}
+						document.addEventListener('visibilitychange', handleVisibility);
+					}
+					
+					// lancement après chargement complet du DOM
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', initSlider);
+					} else {
+						initSlider();
+					}
+					
+				})();
+			</script>
+			
+			<!-- small script pour maintenir le menu actif selon la page (optionnel mais propre) -->
+			<script>
+				(function() {
+					// Ajoute une classe active pour le lien courant en fonction de la page (utile pour la navigation)
+					const currentPage = window.location.pathname.split("/").pop();
+					const navLinks = document.querySelectorAll('#nav ul li a');
+					navLinks.forEach(link => {
+						const href = link.getAttribute('href');
+						if (href === currentPage || (currentPage === "" && href === "index.html") || (href === "index.html" && currentPage === "")) {
+							// enlève la classe current de tous les li puis ajoute au parent
+							document.querySelectorAll('#nav ul li').forEach(li => li.classList.remove('current'));
+							link.closest('li').classList.add('current');
+						}
+					});
+				})();
+			</script>
+			
+	</body>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<!--
+    Dopetrope by HTML5 UP | html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Adapté pour Actes De Vie
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Actes De Vie - Services d'accompagnement, actualités et ressources pour faciliter vos démarches du quotidien" />
+    <meta name="keywords" content="Actes De Vie, services, accompagnement, actualités, contact" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* ===== STYLES PERSONNALISÉS ===== */
+        
+        /* Couleur principale */
+        :root {
+            --primary: #d52349;
+            --primary-dark: #b01a3a;
+            --primary-light: #e44c65;
+        }
+
+        /* Navigation */
+        #nav .current a {
+            background: var(--primary);
+            color: #fff !important;
+        }
+        #nav a:hover {
+            background: var(--primary-light);
+            color: #fff !important;
+        }
+
+        /* ===== SECTION NOS SERVICES ===== */
+        #services {
+            padding: 40px 0;
+        }
+
+        #services .major h2 {
+            background: #f7f7f7;
+            padding: 0 1em;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 30px 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 4px solid var(--primary);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ===== ESPACE POUR LES PHOTOS ===== */
+        .service-card .service-image {
+            width: 100%;
+            height: 180px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .service-card .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-card .service-image .placeholder-text {
+            color: #999;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .service-card .service-image .placeholder-text i {
+            display: block;
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            color: #bbb;
+        }
+
+        .service-card:hover .service-image {
+            border-color: var(--primary);
+        }
+
+        .service-card .service-icon {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card .service-desc {
+            color: #5d5d5d;
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 15px;
+        }
+
+        .service-card .service-desc strong {
+            color: #252122;
+            font-weight: 600;
+        }
+
+        .service-card .service-footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .service-card .btn-rdv {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 8px 22px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-card .btn-rdv:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card .service-image {
+                height: 150px;
+            }
+        }
+
+        /* ===== FOOTER ACTUALITÉS ===== */
+        .footer-news-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .footer-news-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        .footer-news-item .news-date {
+            font-size: 0.75rem;
+            color: var(--primary-light);
+            font-weight: 600;
+            white-space: nowrap;
+            min-width: 70px;
+        }
+        .footer-news-item .news-title {
+            flex: 1;
+            color: #c5c4c4;
+            font-size: 0.85rem;
+            padding: 0 10px;
+        }
+        .footer-news-item .button.small {
+            font-size: 0.65rem;
+            padding: 3px 12px;
+            background: var(--primary);
+            color: #fff !important;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        .footer-news-item .button.small:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-all-news {
+            background: var(--primary);
+            color: white !important;
+            width: 100%;
+            text-align: center;
+            display: block;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+        .btn-all-news:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(213, 35, 73, 0.3);
+        }
+
+        #footer {
+            padding: 4em 0;
+        }
+        #footer h2 {
+            color: var(--primary-light) !important;
+        }
+        #footer a {
+            color: #c5c4c4;
+        }
+        #footer a:hover {
+            color: #fff;
+        }
+        #footer .col-4 {
+            padding: 0 20px;
+        }
+
+        .footer-map iframe {
+            width: 100%;
+            height: 280px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        @media screen and (max-width: 980px) {
+            .footer-map iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body class="homepage is-preload">
+    <div id="page-wrapper">
+
+        <!-- ===== HEADER ===== -->
+        <section id="header">
+            <div id="logo">
+                <h1><a href="index.html">Actes De Vie</a></h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li class="current"><a href="nosservices.html">Nos Services</a></li>
+                    <li><a href="nousconnaitre.html">Nous connaître</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- ===== MAIN ===== -->
+        <section id="main">
+            <section id="services" class="container">
+
+                <header class="major">
+                    <h2>Nos services</h2>
+                </header>
+
+                <!-- Grille des services -->
+                <div class="service-grid">
+
+                    <!-- Service 1 : Permanence sociale - Aude GUEROU -->
+                    <div class="service-card">
+                        <!-- ESPACE PHOTO -->
+                        <div class="service-image">
+                            <img src="images/permanence-sociale.jpg" alt="Permanence sociale - Aude GUEROU">
+                            <!-- 
+                                Pour ajouter une photo, remplacez le chemin ci-dessus par :
+                                <img src="votre-image.jpg" alt="Description">
+                                
+                                Ou utilisez le placeholder ci-dessous si pas d'image :
+                                <div class="placeholder-text">
+                                    <i>🖼️</i>
+                                    Photo à venir
+                                </div>
+                            -->
+                        </div>
+                        <div class="service-icon">🤝</div>
+                        <h3>Permanence sociale</h3>
+                        <div class="service-desc">
+                            <strong>Assistance sociale en formation, Aude GUEROU</strong> propose de vous rencontrer afin de vous accompagner, vous orienter, vous informer et déterminer une aide si besoin.
+                        </div>
+                        <div class="service-footer">
+                            <a href="contact.html" class="btn-rdv">Prendre rendez-vous</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 : Permanence sociale - Louise et Luc CARRARA -->
+                    <div class="service-card">
+                        <!-- ESPACE PHOTO -->
+                        <div class="service-image">
+                            <img src="images/budget-finances.jpg" alt="Permanence sociale - Louise et Luc CARRARA">
+                            <!-- 
+                                Pour ajouter une photo, remplacez le chemin ci-dessus par :
+                                <img src="votre-image.jpg" alt="Description">
+                                
+                                Ou utilisez le placeholder ci-dessous si pas d'image :
+                                <div class="placeholder-text">
+                                    <i>🖼️</i>
+                                    Photo à venir
+                                </div>
+                            -->
+                        </div>
+                        <div class="service-icon">💰</div>
+                        <h3>Permanence sociale</h3>
+                        <div class="service-desc">
+                            <strong>Comptables de profession, Louise et Luc CARRARA</strong> proposent de vous rencontrer afin de vous conseiller dans la gestion de vos finances (dédié aux particuliers).
+                        </div>
+                        <div class="service-footer">
+                            <a href="contact.html" class="btn-rdv">Prendre rendez-vous</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 : Aide à l'emploi -->
+                    <div class="service-card">
+                        <!-- ESPACE PHOTO -->
+                        <div class="service-image">
+                            <img src="images/aide-emploi.jpg" alt="Aide à l'emploi">
+                            <!-- 
+                                Pour ajouter une photo, remplacez le chemin ci-dessus par :
+                                <img src="votre-image.jpg" alt="Description">
+                                
+                                Ou utilisez le placeholder ci-dessous si pas d'image :
+                                <div class="placeholder-text">
+                                    <i>🖼️</i>
+                                    Photo à venir
+                                </div>
+                            -->
+                        </div>
+                        <div class="service-icon">💼</div>
+                        <h3>Aide à l'emploi</h3>
+                        <div class="service-desc">
+                            Une équipe de bénévoles se mobilise pour vous aider à la recherche d'un emploi ou d'une formation.
+                        </div>
+                        <div class="service-footer">
+                            <a href="contact.html" class="btn-rdv">Prendre rendez-vous</a>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 : Distribution Alimentaire -->
+                    <div class="service-card">
+                        <!-- ESPACE PHOTO -->
+                        <div class="service-image">
+                            <img src="images/distribution-alimentaire.jpg" alt="Distribution Alimentaire">
+                            <!-- 
+                                Pour ajouter une photo, remplacez le chemin ci-dessus par :
+                                <img src="votre-image.jpg" alt="Description">
+                                
+                                Ou utilisez le placeholder ci-dessous si pas d'image :
+                                <div class="placeholder-text">
+                                    <i>🖼️</i>
+                                    Photo à venir
+                                </div>
+                            -->
+                        </div>
+                        <div class="service-icon">🍎</div>
+                        <h3>Distribution Alimentaire</h3>
+                        <div class="service-desc">
+                            Nous organisons des distributions alimentaires gratuites accessibles sous certaines conditions. Un rdv devra être pris pour déterminer si vous les remplissez.
+                        </div>
+                        <div class="service-footer">
+                            <a href="contact.html" class="btn-rdv">Prendre rendez-vous</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Lire plus -->
+                <div style="text-align:center; margin-top:30px;">
+                    <a href="#" class="button large" style="background:var(--primary); color:#fff !important;">Lire plus</a>
+                </div>
+
+            </section>
+        </section>
+
+        <!-- ===== FOOTER ===== -->
+        <section id="footer">
+            <div class="container">
+
+                <div class="row">
+
+                    <!-- Colonne Actualités -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <h2>📰 Actualités</h2>
+
+                            <div class="footer-news-item">
+                                <span class="news-date">23.01.2024</span>
+                                <span class="news-title">Permanence sociale - Nouveaux horaires</span>
+                                <a href="actualites.html" class="button small">Lire</a>
+                            </div>
+
+                            <div class="footer-news-item">
+                                <span class="news-date">06.02.2024</span>
+                                <span class="news-title">Atelier budget - Inscriptions ouvertes</span>
+                                <a href="actualites.html" class="button small">Lire</a>
+                            </div>
+
+                            <div class="footer-news-item">
+                                <span class="news-date">15.03.2024</span>
+                                <span class="news-title">Forum de l'emploi - Inscrivez-vous</span>
+                                <a href="actualites.html" class="button small">Lire</a>
+                            </div>
+
+                            <a href="actualites.html" class="btn-all-news">
+                                📰 Voir toutes les actualités →
+                            </a>
+                        </section>
+                    </div>
+
+                    <!-- Colonne Carte -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <h2>Nous trouver</h2>
+                            <div class="footer-map">
+                                <iframe
+                                    src="https://maps.google.com/maps?q=Orleans&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    allowfullscreen=""
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Colonne Infos -->
+                    <div class="col-4 col-12-medium">
+                        <section>
+                            <h2>Adresse</h2>
+                            <p>
+                                <strong>Siège social :</strong><br>
+                                203 rue des Couvertes<br>
+                                43800 LYON
+                            </p>
+                            <p>
+                                <strong>Lieu d'activité :</strong><br>
+                                5 rue Gustave Eiffel<br>
+                                45000 ORLÉANS
+                            </p>
+
+                            <h2>Téléphone / Mail</h2>
+                            <p>
+                                <a href="tel:0749740830">07.49.74.08.30</a>
+                            </p>
+                            <p>
+                                <a href="mailto:contact@carte-bandeau.fr">
+                                    contact@carte-bandeau.fr
+                                </a>
+                            </p>
+
+                            <hr style="border-color:rgba(255,255,255,0.1);">
+                            <p style="font-size:0.75rem; color:#888;">
+                                <strong>Dernière modification :</strong> 2018.11.11<br>
+                                <strong>Partenaire Indépendant</strong><br>
+                                Publier ou devoir dématérialisé
+                            </p>
+                        </section>
+                    </div>
+
+                </div>
+
+                <!-- Copyright -->
+                <div class="row" style="margin-top:30px;">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="links">
+                                <li>&copy; Adresse Des Une Trois droits réservés.</li>
+                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                                <li><a href="#">Mentions légales</a></li>
+                                <li><a href="#">Politique de confidentialité</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
