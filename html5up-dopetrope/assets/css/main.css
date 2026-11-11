@@ -2064,13 +2064,17 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
+        #header {
 		position: relative;
 		background: #ffffff;
 		border-bottom: solid 1px #ccc;
 		padding: 5em 0 4em 0;
 		text-align: center;
-	}
+        
+        /* AJOUTEZ CES 2 LIGNES POUR LIMITER LA LARGEUR */
+		max-width: 70em; /* Correspond à la largeur de votre .container */
+		margin: 0 auto;
+	    }
 
 		#header h1 {
 			color: #252122;
