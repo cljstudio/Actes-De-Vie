@@ -306,7 +306,20 @@
 					font-size: 0.85em !important;
 				}
 			}
+
+			        /* ========= FORCER LA BANNIÈRE EN PLEINE LARGEUR ========= */
+        /* On sort la bannière du conteneur #header centré */
+        #banner {
+            width: 100vw !important;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+        }
+
 		</style>
+		
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
