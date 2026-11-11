@@ -84,8 +84,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #252122;
-		background-image: url("images/bg02.png");
+           background: #fcfbf7; /* Le blanc cassé de votre page "À propos" */
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
