@@ -2082,6 +2082,11 @@ input, select, textarea {
 		}
 
 /* Nav - Version simplifiée */
+/* --- AJOUT POUR CACHER LE BOUTON MENU SUR PC --- */
+
+#nav-toggle {
+    display: none !important;
+}
 
 #nav {
     margin: 2.5em 0 0 0;
